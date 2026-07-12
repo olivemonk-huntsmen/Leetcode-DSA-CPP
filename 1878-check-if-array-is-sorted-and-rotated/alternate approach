@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+
+        int n = nums.size();
+
+        // Concatenate the array with itself
+        vector<int> arr = nums;
+        arr.insert(arr.end(), nums.begin(), nums.end());
+
+        // Try every possible starting position
+        for (int start = 0; start < n; start++) {
+
+            bool sorted = true;
+
+            // Check if the next n elements are sorted
+            for (int j = start; j < start + n - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    sorted = false;
+                    break;
+                }
+            }
+
+            if (sorted)
+                return true;
+        }
+
+        return false;
+    }
+};
