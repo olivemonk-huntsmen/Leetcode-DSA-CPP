@@ -1,0 +1,13 @@
+
+        set<int> s;   //store unique element maintains the sorted oreder
+        for(int val: nums){
+            s.insert(val);   // Add all elements from array to the set
+        }
+        
+        int k = s.size();
+
+        int j =0;
+        for(int val :s ){ //insertig back those elemntes in set to array
+        nums[j++] = val;
+        }
+        return k;
